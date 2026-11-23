@@ -1,0 +1,26 @@
+# Render blueprint. In Render: New → Blueprint → pick this repo.
+# Free plan: no persistent disk, so the evidence store resets on restarts.
+# The bot survives that because it replays only recent updates.
+services:
+  - type: web
+    name: suspicion
+    runtime: docker
+    plan: free
+    region: singapore
+    healthCheckPath: /health
+    autoDeploy: true
+    envVars:
+      - key: SUSPICION_TELEGRAM_TOKEN
+        sync: false
+      - key: SUSPICION_LLM_API_KEY
+        sync: false
+      - key: SUSPICION_LLM_BASE_URL
+        value: https://api.groq.com/openai/v1
+      - key: SUSPICION_LLM_MODEL
+        value: qwen/qwen3.8-27b
+      - key: SUSPICION_BOT_HANDLE
+        value: "@suspicion_check_bot"
+      - key: SUSPICION_DB_PATH
+        value: /tmp/suspicion.db
+      - key: SUSPICION_HASH_SALT
+        generateValue: true
