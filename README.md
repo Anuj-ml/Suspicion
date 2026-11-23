@@ -1,5 +1,7 @@
 # Suspicion
 
+**Chat with the bot: [@suspicion_check_bot](https://t.me/suspicion_check_bot)** — open it in Telegram, hit Start, then forward any job or internship offer.
+
 Telegram bot that risk-checks a forwarded job or internship offer and returns **signals, sources and next steps** — never a verdict.
 
 Forward a recruiter message, an offer PDF, or a screenshot. You get back a short case file: what stands out, what was actually looked up, and what to do before paying or sharing documents.
